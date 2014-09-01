@@ -2,9 +2,14 @@
 <html>
 <head>
 <meta charset=utf-8 />
-<title>Unhackathon Applicant Schools</title>
+<title>Unhackathon Hacker Schools</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <script src='https://api.tiles.mapbox.com/mapbox.js/v2.0.1/mapbox.js'></script>
+    <meta name="og:title" content="Unhackathon Hacker Schools">
+    <meta name="og:site_name" content="Unhackathon">
+    <meta name="og:url" content="http://www.unhackathon.org/map/">
+    <meta name="og:description" content="Use this map to determine your potential closest Unhackathon bus pickup. Official maps will be out after applications close. Email us at team@unhackathon.org if you have any questions">
+    <meta name="og:image" content="http://www.unhackathon.org/map/fbimage.png">
+    <script src='https://addTopi.tiles.mapbox.com/mapbox.js/v2.0.1/mapbox.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox.js/v2.0.1/mapbox.css' rel='stylesheet' />
     <link href='style.css' rel='stylesheet' />
 </head>
@@ -58,7 +63,9 @@
             [40.450517,-80.244466],
             [37.27097,-79.941427],
             [37.437006,-76.320662],
-            [41.958446,-70.667262]]).addTo(myLayer);
+            [41.958446,-70.667262]], 
+            {color: '#C00', opacity: .9}
+        ).addTo(myLayer);
 
         schools.forEach(function(entry){    // TODO fix if we only want schools inside our busing radius to be displayed.
             if(leafletPip.pointInLayer([entry[2],entry[3]], myLayer)){
